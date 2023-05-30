@@ -1,7 +1,6 @@
 "use client";
 import pic from "@/public/pic.jpg";
 import Image from "next/image";
-import Link from "next/link";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 
@@ -10,13 +9,21 @@ type Props = {};
 function Hero(props: Props) {
   const [text, count] = useTypewriter({
     words: [
-      "Hi, the name's Justin Sixsmith.",
-      "Guy-who-loves-Board-Games.tsx",
+      "Hi, the name's Justin.",
+      "Guy-who-loves-board-games.tsx",
       "<ButLovesToCodeMore />",
     ],
     loop: true,
     delaySpeed: 2000,
   });
+
+  function scrollToSection(id: string) {
+    const element = document.getElementById(id);
+    const container = document.querySelector(".main-div");
+    if (element && container) {
+      container.scrollTop = element.offsetTop;
+    }
+  }
 
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
@@ -36,18 +43,30 @@ function Hero(props: Props) {
         </h1>
 
         <div className="pt-5">
-          <Link href="#about">
-            <button className="heroButton">About</button>
-          </Link>
-          <Link href="#experience">
-            <button className="heroButton">Experience</button>
-          </Link>
-          <Link href="#skills">
-            <button className="heroButton">Skills</button>
-          </Link>
-          <Link href="#projects">
-            <button className="heroButton">Projects</button>
-          </Link>
+          <button
+            className="heroButton"
+            onClick={() => scrollToSection("about")}
+          >
+            About
+          </button>
+          <button
+            className="heroButton"
+            onClick={() => scrollToSection("experience")}
+          >
+            Experience
+          </button>
+          <button
+            className="heroButton"
+            onClick={() => scrollToSection("skills")}
+          >
+            Skills
+          </button>
+          <button
+            className="heroButton"
+            onClick={() => scrollToSection("projects")}
+          >
+            Projects
+          </button>
         </div>
       </div>
     </div>
