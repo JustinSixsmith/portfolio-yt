@@ -1,4 +1,5 @@
 "use client";
+import scrollToSection from "@/functions/scrollToSection";
 import { motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
 
@@ -35,6 +36,7 @@ function Header(props: Props) {
       </motion.div>
 
       <motion.div
+        onClick={() => scrollToSection("contact")}
         initial={{ x: 500, opacity: 0, scale: 0.5 }}
         animate={{ x: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 1.5 }}

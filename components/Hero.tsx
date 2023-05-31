@@ -3,27 +3,20 @@ import pic from "@/public/pic.jpg";
 import Image from "next/image";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
+import scrollToSection from "@/functions/scrollToSection";
 
 type Props = {};
 
 function Hero(props: Props) {
   const [text, count] = useTypewriter({
     words: [
-      "Hi, the name's Justin.",
+      "Hi, my name is Justin.",
       "guy-who-loves-board-games.tsx",
       "<ButLovesToCodeMore />",
     ],
     loop: true,
     delaySpeed: 2000,
   });
-
-  function scrollToSection(id: string) {
-    const element = document.getElementById(id);
-    const container = document.querySelector(".main-div");
-    if (element && container) {
-      container.scrollTop = element.offsetTop;
-    }
-  }
 
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
