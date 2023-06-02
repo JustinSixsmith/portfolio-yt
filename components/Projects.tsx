@@ -1,4 +1,6 @@
 "use client";
+
+import { getProjects } from "@/sanity/sanity-utils";
 import React from "react";
 import bgDisco from "@/public/bg-disco.jpg";
 import Image from "next/image";
@@ -7,6 +9,7 @@ import { motion } from "framer-motion";
 type Props = {};
 
 function Projects({}: Props) {
+  // const projects = await getProjects();
   const projects = [1, 2, 3, 4];
 
   return (

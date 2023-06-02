@@ -1,4 +1,5 @@
 "use client";
+
 import About from "@/components/About";
 import ContactMe from "@/components/ContactMe";
 import Header from "@/components/Header";
@@ -9,8 +10,11 @@ import WorkExperience from "@/components/WorkExperience";
 import scrollToSection from "@/functions/scrollToSection";
 import Image from "next/image";
 import pic from "../public/pic.jpg";
+import { getProjects } from "@/sanity/sanity-utils";
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getProjects();
+
   return (
     <main className="main-div bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 smooth-scroll scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
       <Header />
@@ -18,6 +22,10 @@ export default function Home() {
       <section id="hero" className="snap-start">
         <Hero />
       </section>
+
+      {projects.map((project) => (
+        <div key={project._id}>{project.title}</div>
+      ))}
 
       <section id="about" className="snap-center">
         <About />
