@@ -1,17 +1,15 @@
 "use client";
 
-import { getProjects } from "@/sanity/sanity-utils";
 import React from "react";
-import bgDisco from "@/public/bg-disco.jpg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Project } from "@/types/Project";
 
-type Props = {};
+type Props = {
+  projects: Project[];
+};
 
-function Projects({}: Props) {
-  // const projects = await getProjects();
-  const projects = [1, 2, 3, 4];
-
+function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -27,7 +25,7 @@ function Projects({}: Props) {
         {projects.map((project, i) => (
           <div
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
-            key={i}
+            key={project._id}
           >
             <motion.div
               initial={{
@@ -43,7 +41,7 @@ function Projects({}: Props) {
               }}
               viewport={{ once: true }}
             >
-              <Image src={bgDisco} alt="Disco Image" />
+              <img src={project.image} alt={project.title} />
             </motion.div>
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
@@ -51,21 +49,11 @@ function Projects({}: Props) {
                 <span className="underline decoration-[#F7AB0A]/50">
                   Project {i + 1} of {projects.length}:
                 </span>{" "}
-                Board Game Discovery
+                {project.title}
               </h4>
 
               <p className="text-lg text-center md:text-left">
-                Board Game Discovery is a dynamic, user-friendly platform for
-                board game enthusiasts, meticulously crafted as a personal
-                project by a dedicated frontend React developer. It showcases an
-                extensive database of games, complete with detailed
-                descriptions, ratings, and user reviews. The platform features a
-                personalized recommendation system, designed to help users
-                discover new games based on their preferences. Whether you are a
-                seasoned player, a newcomer to the board game scene, or a
-                potential employer exploring innovative frontend designs, Board
-                Game Discovery offers a seamless, engaging, and insightful
-                journey into the world of board games.
+                {project.summary}
               </p>
             </div>
           </div>

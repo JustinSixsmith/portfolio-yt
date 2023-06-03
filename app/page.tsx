@@ -10,10 +10,11 @@ import WorkExperience from "@/components/WorkExperience";
 import scrollToSection from "@/functions/scrollToSection";
 import Image from "next/image";
 import pic from "../public/pic.jpg";
-import { getProjects } from "@/sanity/sanity-utils";
+import { getPageInfo, getProjects } from "@/sanity/sanity-utils";
 
 export default async function Home() {
   const projects = await getProjects();
+  const pageInfo = await getPageInfo();
 
   return (
     <main className="main-div bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 smooth-scroll scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
@@ -36,7 +37,7 @@ export default async function Home() {
       </section>
 
       <section id="projects" className="snap-start">
-        <Projects />
+        <Projects projects={projects} />
       </section>
 
       <section id="contact" className="snap-start">
