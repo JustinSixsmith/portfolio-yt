@@ -23,10 +23,6 @@ export default async function Home() {
         <Hero />
       </section>
 
-      {projects.map((project) => (
-        <div key={project._id}>{project.title}</div>
-      ))}
-
       <section id="about" className="snap-center">
         <About />
       </section>
