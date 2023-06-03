@@ -7,6 +7,7 @@ export async function getProjects(): Promise<Project[]> {
     projectId: "1etqlj0y",
     dataset: "production",
     apiVersion: "2023-06-01",
+    useCdn: false,
   });
 
   return client.fetch(
@@ -22,25 +23,27 @@ export async function getProjects(): Promise<Project[]> {
   );
 }
 
-export async function getPageInfo(): Promise<PageInfo[]> {
+export async function getExperience(): Promise<PageInfo[]> {
   const client = createClient({
     projectId: "1etqlj0y",
     dataset: "production",
     apiVersion: "2023-06-01",
+    useCdn: false,
   });
 
   return client.fetch(
-    groq`*[_type == "project"]{
+    groq`*[_type == "experience"]{
         _id,
         _createdAt,
-        name,
-        role,
-        "heroImage": heroImage.asset->url,
-        backgroundInformation,
-        "profilePic": profilePic.asset->url,
+        jobTitle,
+        "companyImage": companyImage.asset->url,
+        company,
+        dateStarted,
+        dateEnded,
         phoneNumber,
-        email,
-        address,
+        isCurrentlyWorkingHere,
+        "technologies": technologies[]->title,
+        "points": points[]->title,
     }`
   );
 }

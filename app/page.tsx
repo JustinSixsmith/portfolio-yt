@@ -10,10 +10,13 @@ import WorkExperience from "@/components/WorkExperience";
 import scrollToSection from "@/functions/scrollToSection";
 import Image from "next/image";
 import pic from "../public/pic.jpg";
-import { getPageInfo, getProjects } from "@/sanity/sanity-utils";
+import { getProjects } from "@/sanity/sanity-utils";
+import { getSocials } from "./api/getSocials";
+import { getPageInfo } from "./api/getPageInfo";
 
 export default async function Home() {
   const projects = await getProjects();
+  const socials = await getSocials();
   const pageInfo = await getPageInfo();
 
   return (
@@ -23,6 +26,9 @@ export default async function Home() {
       <section id="hero" className="snap-start">
         <Hero />
       </section>
+      {socials.map((social) => (
+        <p key={social._id}>{social.title}</p>
+      ))}
 
       <section id="about" className="snap-center">
         <About />

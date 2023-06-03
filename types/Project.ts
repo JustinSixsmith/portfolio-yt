@@ -1,9 +1,13 @@
+import { Image } from "./Image";
+import { Technology } from "./Technology";
+
 export type Project = {
   _id: string;
   _createdAt: Date;
+  _type: "project";
   title: string;
-  image: string;
+  image: Image;
   summary: string;
-  technologies: string;
+  technologies: Technology[];
   linkToBuild: string;
 };
