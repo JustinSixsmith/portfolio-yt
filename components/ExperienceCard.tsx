@@ -14,18 +14,15 @@ function ExperienceCard({ experience }: Props) {
                   xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer
                   transition-opacity duration-200 overflow-hidden"
     >
-      <motion.div
+      <motion.img
         initial={{ y: -60, opacity: 0 }}
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 1 }}
         viewport={{ once: true }}
-      >
-        <img
-          className="w-32 h-32 rounded-full md:rounded-full xl:w-[200px] xl:h-[200px] object-cover object-top"
-          src={urlFor(experience?.companyImage).url()}
-          alt={experience?.company}
-        />
-      </motion.div>
+        className="w-32 h-32 rounded-full md:rounded-full xl:w-[200px] xl:h-[200px] object-cover object-top"
+        src={urlFor(experience?.companyImage).url()}
+        alt={experience?.company}
+      />
 
       <div className="px-0 md:px-10 items-start">
         <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>

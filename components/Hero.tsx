@@ -13,7 +13,7 @@ function Hero({ pageInfo }: Props) {
   const [text] = useTypewriter({
     words: [
       `Hi, I'm ${pageInfo?.name}.`,
-      "Guy-who-loves-board-games.tsx",
+      "Guy-who-loves-music.tsx",
       "<ButLovesToCodeMore />",
     ],
     loop: true,

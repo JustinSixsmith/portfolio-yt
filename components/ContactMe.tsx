@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
-import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
-import { useForm, Resolver } from "react-hook-form";
+import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import { useForm } from "react-hook-form";
 
 type FormValues = {
   name: string;
@@ -26,8 +25,9 @@ function ContactMe({}: Props) {
 
       <div className="flex flex-col space-y-10">
         <h4 className="text-4xl font-semibold text-center">
-          I got what you need.{" "}
-          <span className="decoration-[#F7AB0A]/50 underline">Lets Talk.</span>
+          <span className="decoration-[#F7AB0A]/50 underline">
+            Let&apos;s Talk
+          </span>
         </h4>
 
         <div className="space-y-10">
