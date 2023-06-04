@@ -1,11 +1,13 @@
 "use client";
-import hawaii from "@/public/hawaii.jpg";
+import { urlFor } from "@/sanity.config";
+import { PageInfo } from "@/types/PageInfo";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-function About({}: Props) {
+function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -32,7 +34,7 @@ function About({}: Props) {
         viewport={{ once: true }}
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover overflow-hidden md:rounded-lg md:w-64 md:h-96 xl:w-[400px] xl:h-[400px]"
       >
-        <Image src={hawaii} alt="Justin and his wife" />
+        <img src={urlFor(pageInfo?.profilePic).url()} />
       </motion.div>
 
       <div className="space-y-10 px-0 md:px-10">
@@ -40,19 +42,7 @@ function About({}: Props) {
           A <span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
           background...
         </h4>
-        <p className="text-base">
-          Hello! My name is Justin Sixsmith, a software developer who
-          transitioned from a successful career in sales management. I thrive in
-          the realm of technology, harnessing my passion for problem-solving,
-          leadership, and effective communication to create impactful software
-          solutions. My expertise spans across a variety of programming
-          languages, including HTML, CSS, JavaScript, TypeScript, React, Python,
-          and Java SE/EE. I hold an AWS Certified Solutions Architect
-          certification and have contributed to diverse development projects,
-          reflecting my commitment to continual learning and innovation. I love
-          the creative and technical challenges that software development
-          presents and look forward to sharing this journey with you.
-        </p>
+        <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );

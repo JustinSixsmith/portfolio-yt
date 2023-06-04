@@ -1,7 +1,7 @@
-import { Skill } from "@/types/Skill";
+import { Project } from "@/types/Project";
 import { createClient, groq } from "next-sanity";
 
-export async function getSkills(): Promise<Skill[]> {
+export async function getProjects(): Promise<Project[]> {
   const client = createClient({
     projectId: "1etqlj0y",
     dataset: "production",
@@ -9,5 +9,8 @@ export async function getSkills(): Promise<Skill[]> {
     useCdn: false,
   });
 
-  return client.fetch(groq`*[_type == "skill"]`);
+  return client.fetch(groq`*[_type == "project"] {
+    ...,
+    technologies[]->
+  }`);
 }

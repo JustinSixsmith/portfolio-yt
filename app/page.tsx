@@ -10,32 +10,33 @@ import WorkExperience from "@/components/WorkExperience";
 import scrollToSection from "@/functions/scrollToSection";
 import Image from "next/image";
 import pic from "../public/pic.jpg";
-import { getProjects } from "@/sanity/sanity-utils";
-import { getSocials } from "./api/getSocials";
+import { getExperience } from "./api/getExperience";
 import { getPageInfo } from "./api/getPageInfo";
+import { getProjects } from "./api/getProjects";
+import { getSkills } from "./api/getSkills";
+import { getSocials } from "./api/getSocials";
 
 export default async function Home() {
   const projects = await getProjects();
   const socials = await getSocials();
   const pageInfo = await getPageInfo();
+  const experience = await getExperience();
+  const skills = await getSkills();
 
   return (
     <main className="main-div bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 smooth-scroll scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
       <Header />
 
       <section id="hero" className="snap-start">
-        <Hero />
+        <Hero pageInfo={pageInfo} />
       </section>
-      {socials.map((social) => (
-        <p key={social._id}>{social.title}</p>
-      ))}
 
       <section id="about" className="snap-center">
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
 
       <section id="experience" className="snap-center">
-        <WorkExperience />
+        <WorkExperience experience={experience} />
       </section>
 
       <section id="skills" className="snap-start">

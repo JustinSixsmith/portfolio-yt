@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Project } from "@/types/Project";
 
@@ -41,7 +40,7 @@ function Projects({ projects }: Props) {
               }}
               viewport={{ once: true }}
             >
-              <img src={project.image} alt={project.title} />
+              {/* <Image src={project.image} alt={project.title} /> */}
             </motion.div>
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">

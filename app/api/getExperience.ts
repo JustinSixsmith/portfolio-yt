@@ -1,7 +1,7 @@
 import { Experience } from "@/types/Experience";
 import { createClient, groq } from "next-sanity";
 
-export async function getPageInfo(): Promise<Experience[]> {
+export async function getExperience(): Promise<Experience[]> {
   const client = createClient({
     projectId: "1etqlj0y",
     dataset: "production",
@@ -9,5 +9,8 @@ export async function getPageInfo(): Promise<Experience[]> {
     useCdn: false,
   });
 
-  return client.fetch(groq`*[_type == "experience"]`);
+  return client.fetch(groq`*[_type == "experience"] {
+    ...,
+    technologies[]->,
+  }`);
 }

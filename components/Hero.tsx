@@ -1,17 +1,19 @@
 "use client";
-import pic from "@/public/pic.jpg";
-import Image from "next/image";
+import scrollToSection from "@/functions/scrollToSection";
+import { urlFor } from "@/sanity.config";
+import { PageInfo } from "@/types/PageInfo";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-import scrollToSection from "@/functions/scrollToSection";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-function Hero(props: Props) {
-  const [text, count] = useTypewriter({
+function Hero({ pageInfo }: Props) {
+  const [text] = useTypewriter({
     words: [
-      "Hi, I'm Justin.",
-      "a-guy-who-loves-board-games.tsx",
+      `Hi, I'm ${pageInfo?.name}.`,
+      "Guy-who-loves-board-games.tsx",
       "<ButLovesToCodeMore />",
     ],
     loop: true,
@@ -21,14 +23,15 @@ function Hero(props: Props) {
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
-      <Image
+      <img
+        src={urlFor(pageInfo?.heroImage).url()}
+        width={32}
+        alt={pageInfo?.name}
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src={pic}
-        alt="Picture of Justin Sixsmith"
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-          Software Engineer
+          {pageInfo?.role}
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
