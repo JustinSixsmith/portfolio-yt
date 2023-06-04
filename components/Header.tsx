@@ -1,11 +1,14 @@
 "use client";
 import scrollToSection from "@/functions/scrollToSection";
+import { Social } from "@/types/Social";
 import { motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
 
-type Props = {};
+type Props = {
+  socials: Social[];
+};
 
-function Header(props: Props) {
+function Header({ socials }: Props) {
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -14,25 +17,15 @@ function Header(props: Props) {
         transition={{ duration: 1.5 }}
         className="flex flex-row items-center"
       >
-        {/* Social Icons */}
-        <SocialIcon
-          url="https://www.youtube.com/channel/UCw9N-O3Y4BU6ecEmpM74R-A"
-          fgColor="gray"
-          bgColor="transparent"
-          target="_blank"
-        />
-        <SocialIcon
-          url="https://www.youtube.com/channel/UCw9N-O3Y4BU6ecEmpM74R-A"
-          fgColor="gray"
-          bgColor="transparent"
-          target="_blank"
-        />
-        <SocialIcon
-          url="https://www.youtube.com/channel/UCw9N-O3Y4BU6ecEmpM74R-A"
-          fgColor="gray"
-          bgColor="transparent"
-          target="_blank"
-        />
+        {socials?.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+            target="_blank"
+          />
+        ))}
       </motion.div>
 
       <motion.div
