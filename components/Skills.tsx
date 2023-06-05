@@ -8,6 +8,10 @@ type Props = {
 };
 
 function Skills({ skills }: Props) {
+  const sortedSkills = skills
+    ?.sort((a, b) => a.progress - b.progress)
+    .reverse();
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -24,7 +28,7 @@ function Skills({ skills }: Props) {
       </h3> */}
 
       <div className="grid grid-cols-4 gap-5">
-        {skills?.slice(0, skills.length / 2).map((skill) => (
+        {sortedSkills?.slice(0, skills.length / 2).map((skill) => (
           <Skill key={skill._id} skill={skill} />
         ))}
         {skills?.slice(skills.length / 2, skills.length).map((skill) => (

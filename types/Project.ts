@@ -10,4 +10,5 @@ export type Project = {
   summary: string;
   technologies: Technology[];
   linkToBuild: string;
+  linkToSource: string;
 };

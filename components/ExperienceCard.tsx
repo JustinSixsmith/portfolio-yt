@@ -10,8 +10,8 @@ type Props = {
 function ExperienceCard({ experience }: Props) {
   return (
     <article
-      className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px]
-                  xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer
+      className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[250px] md:w-[300px]
+                  xl:w-[450px] snap-center bg-[#292929] p-5 hover:opacity-100 opacity-40 cursor-pointer
                   transition-opacity duration-200 overflow-hidden"
     >
       <motion.img
@@ -19,32 +19,39 @@ function ExperienceCard({ experience }: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 1 }}
         viewport={{ once: true }}
-        className="w-32 h-32 rounded-full md:rounded-full xl:w-[200px] xl:h-[200px] object-cover object-top"
+        className="w-16 h-16 rounded-full md:rounded-full xl:w-[100px] xl:h-[100px] object-cover object-top"
         src={urlFor(experience?.companyImage).url()}
         alt={experience?.company}
       />
 
-      <div className="px-0 md:px-10 items-start">
-        <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>
-        <p className="uppercase font-bold text-2xl mt-1">
-          {experience?.company}
-        </p>
+      <div className="px-0 md:px-5 items-start">
+        <h4 className="text-xl font-light">{experience?.jobTitle}</h4>
+        <p className="uppercase font-bold mt-1">{experience?.company}</p>
         <div className="flex space-x-2 my-2 wr">
           {experience?.technologies?.map((technology) => (
             <img
               key={technology._id}
-              className="h-10 w-10 rounded-full"
+              className="h-5 w-5 rounded-full"
               src={urlFor(technology.image).url()}
             />
           ))}
         </div>
-        <p className="uppercase py-5 text-gray-300">
-          {new Date(experience?.dateStarted).toDateString()} -{" "}
+
+        <p className="uppercase py-5 text-gray-300 text-xs">
+          {new Date(experience?.dateStarted).toLocaleDateString("default", {
+            year: "numeric",
+            month: "short",
+          })}{" "}
+          -{" "}
           {experience.isCurrentlyWorkingHere
             ? "Present"
-            : new Date(experience?.dateEnded).toDateString()}
+            : new Date(experience?.dateEnded).toLocaleDateString("default", {
+                year: "numeric",
+                month: "short",
+              })}
         </p>
-        <ul className="list-disc space-y-4 lg:text-lg h-80 px-5 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-[@F7AB0A]/80">
+
+        <ul className="list-disc space-y-2 text-xs h-40 px-3 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-[@F7AB0A]/80">
           {experience.points?.map((point, i) => (
             <li key={i}>{point}</li>
           ))}

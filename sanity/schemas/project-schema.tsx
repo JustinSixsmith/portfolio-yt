@@ -40,6 +40,11 @@ const project = {
       title: "LinkToBuild",
       type: "url",
     },
+    {
+      name: "linkToSource",
+      title: "LinkToSource",
+      type: "url",
+    },
   ],
 };
 

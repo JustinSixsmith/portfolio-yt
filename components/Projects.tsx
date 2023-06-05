@@ -59,15 +59,15 @@ function Projects({ projects }: Props) {
                 <span className="underline decoration-[#F7AB0A]/50">
                   Project {i + 1} of {sortedProjects.length}:
                 </span>{" "}
-                {project.title} -{" "}
+                {project.title}{" "}
                 <SocialIcon
-                  url="https://github.com/JustinSixsmith/board-game-discovery"
+                  url={project?.linkToSource}
                   target="_blank"
                   rel="noopener noreferrer"
-                  bgColor="#F7AB0A"
-                  fgColor="#292929"
+                  fgColor="gray"
+                  bgColor="transparent"
                   className="inline-block opacity-80 hover:opacity-100"
-                  style={{ height: 35, width: 35 }}
+                  style={{ height: 50, width: 50 }}
                 />
               </h4>
 

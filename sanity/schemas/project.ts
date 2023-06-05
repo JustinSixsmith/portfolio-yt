@@ -42,5 +42,10 @@ export default defineType({
       title: "LinkToBuild",
       type: "url",
     },
+    {
+      name: "linkToSource",
+      title: "LinkToSource",
+      type: "url",
+    },
   ],
 });
