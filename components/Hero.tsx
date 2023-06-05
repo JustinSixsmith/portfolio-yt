@@ -30,7 +30,7 @@ function Hero({ pageInfo }: Props) {
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
       />
       <div className="z-20">
-        <h2 className="text-xs md:text-base lg:text-xl uppercase text-gray-500 pb-2 tracking-[6px] md:tracking-[12px] lg:tracking-[18px]">
+        <h2 className="text-xs md:text-base lg:text-lg uppercase text-gray-500 pb-2 tracking-[6px] md:tracking-[12px] lg:tracking-[18px]">
           {pageInfo?.role}
         </h2>
         <h1 className="text-lg md:text-3xl lg:text-5xl font-semibold px-5">
