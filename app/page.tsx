@@ -57,7 +57,7 @@ export default async function Home() {
       >
         <div className="flex items-center justify-center">
           <Image
-            className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0"
+            className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 opacity-50 hover:opacity-100"
             src={pic}
             alt="A picture of me"
           />
