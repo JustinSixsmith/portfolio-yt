@@ -38,7 +38,7 @@ function About({ pageInfo }: Props) {
       />
 
       <div
-        className="space-y-2 md:space-y-5 px-0 md:px-10"
+        className="space-y-5 px-0 md:px-10 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80"
         style={{ maxHeight: "45vh", overflowY: "auto" }}
       >
         <h4 className="text-xl md:text-2xl lg:text-4xl font-semibold">
