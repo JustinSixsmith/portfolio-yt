@@ -18,40 +18,40 @@ function ContactMe({}: Props) {
   });
 
   return (
-    <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-      <h3 className="absolute top-20 uppercase tracking-[10px] md:tracking-[20px] md:text-lg text-gray-500">
+    <div className="scale-[60%] md:scale-100 h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-5 justify-evenly mx-auto items-center">
+      <h3 className="absolute top-10 uppercase tracking-[5px] md:tracking-[10px] md:text-sm text-gray-500">
         Contact
       </h3>
 
-      <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
+      <div className="flex flex-col space-y-5">
+        <h4 className="text-2xl font-semibold text-center">
           <span className="decoration-[#F7AB0A]/50 underline">
             Let&apos;s Talk
           </span>
         </h4>
 
-        <div className="space-y-10">
-          <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">360-241-2953</p>
+        <div className="space-y-5">
+          <div className="flex items-center space-x-2 justify-center">
+            <PhoneIcon className="text-[#F7AB0A] h-4 w-4 animate-pulse" />
+            <p className="text-xl">360-241-2953</p>
           </div>
 
-          <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">justinsixsmith@gmail.com</p>
+          <div className="flex items-center space-x-2 justify-center">
+            <EnvelopeIcon className="text-[#F7AB0A] h-4 w-4 animate-pulse" />
+            <p className="text-xl">justinsixsmith@gmail.com</p>
           </div>
 
-          <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">San Antonio, TX</p>
+          <div className="flex items-center space-x-2 justify-center">
+            <MapPinIcon className="text-[#F7AB0A] h-4 w-4 animate-pulse" />
+            <p className="text-xl">San Antonio, TX</p>
           </div>
         </div>
 
         <form
           onSubmit={onSubmit}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-1 w-fit mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex space-x-1">
             <input
               {...register("name")}
               placeholder="Name"
@@ -80,7 +80,7 @@ function ContactMe({}: Props) {
           />
           <button
             type="submit"
-            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg"
+            className="bg-[#F7AB0A] py-2 px-5 rounded-md text-black font-bold text-md"
           >
             Submit
           </button>
