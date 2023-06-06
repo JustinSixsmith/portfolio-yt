@@ -8,6 +8,18 @@ type Props = {
 };
 
 function WorkExperience({ experience }: Props) {
+  const sortOrder = [
+    "Prime Communications",
+    "Codeup",
+    "Code with Mosh",
+    "Wes Bos",
+    "Udemy",
+  ];
+
+  const sortedExperience = experience?.sort((a, b) => {
+    return sortOrder.indexOf(a.company) - sortOrder.indexOf(b.company);
+  });
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,7 +32,7 @@ function WorkExperience({ experience }: Props) {
       </h3>
 
       <div className="w-full space-x-5 overflow-x-scroll pt-[100px] p-3 snap-x snap-mandatory flex flex-row scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
-        {experience.map((experience) => (
+        {sortedExperience.map((experience) => (
           <ExperienceCard key={experience._id} experience={experience} />
         ))}
       </div>
