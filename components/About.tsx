@@ -45,7 +45,7 @@ function About({ pageInfo }: Props) {
           A <span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
           background...
         </h4>
-        <p className="text-sm md:base lg:text-lg">
+        <p className="text-xs md:base lg:text-lg">
           {pageInfo?.backgroundInformation}
         </p>
       </div>

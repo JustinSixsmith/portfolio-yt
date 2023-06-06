@@ -27,11 +27,11 @@ function ExperienceCard({ experience }: Props) {
       <div className="px-0 md:px-5 items-start">
         <h4 className="text-xl font-light">{experience?.jobTitle}</h4>
         <p className="uppercase font-bold mt-1">{experience?.company}</p>
-        <div className="flex space-x-2 my-2 wr">
+        <div className="flex space-x-1 lg:space-x-2 my-2">
           {experience?.technologies?.map((technology) => (
             <img
               key={technology._id}
-              className="h-5 w-5 rounded-full"
+              className="h-5 w-5 md:h-6 md:w-6 xl:h-7 xl:w-7 rounded-full"
               src={urlFor(technology.image).url()}
             />
           ))}
