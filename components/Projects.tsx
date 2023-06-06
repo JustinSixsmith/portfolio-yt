@@ -25,10 +25,10 @@ function Projects({ projects }: Props) {
         Projects
       </h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-madatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-madatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
         {sortedProjects?.map((project, i) => (
           <div
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 md:p-44 h-screen"
             key={project._id}
           >
             <a
@@ -51,12 +51,13 @@ function Projects({ projects }: Props) {
                 viewport={{ once: true }}
                 src={urlFor(project?.image).url()}
                 alt={project?.title}
+                className="relative shadow-xl w-[400px] object-cover"
               />
             </a>
 
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
-                <span className="underline decoration-[#F7AB0A]/50">
+            <div className="space-y-3 px-0 md:px-10 max-w-6xl">
+              <h4 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center">
+                <span className="underline decoration-[#F7AB0A]/50 hidden lg:inline">
                   Project {i + 1} of {sortedProjects.length}:
                 </span>{" "}
                 {project.title}{" "}
@@ -75,13 +76,16 @@ function Projects({ projects }: Props) {
                 {project.technologies?.map((technology) => (
                   <img
                     key={technology._id}
-                    className="h-10 w-10 rounded-full"
+                    className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full"
                     src={urlFor(technology.image).url()}
                   />
                 ))}
               </div>
 
-              <p className="text-lg text-center md:text-left">
+              <p
+                className="text-xs md:text-sm lg:text-base text-center md:text-left scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80"
+                style={{ maxHeight: "45vh", overflowY: "auto" }}
+              >
                 {project.summary}
               </p>
             </div>
