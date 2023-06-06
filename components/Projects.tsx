@@ -38,7 +38,7 @@ function Projects({ projects }: Props) {
             >
               <motion.img
                 initial={{
-                  y: -300,
+                  y: -200,
                   opacity: 0,
                 }}
                 transition={{
@@ -55,8 +55,8 @@ function Projects({ projects }: Props) {
               />
             </a>
 
-            <div className="space-y-3 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center">
+            <div className="space-y-2 px-0 md:px-10 max-w-6xl">
+              <h4 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center whitespace-nowrap">
                 <span className="underline decoration-[#F7AB0A]/50 hidden lg:inline">
                   Project {i + 1} of {sortedProjects.length}:
                 </span>{" "}
