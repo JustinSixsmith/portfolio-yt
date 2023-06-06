@@ -82,10 +82,7 @@ function Projects({ projects }: Props) {
                 ))}
               </div>
 
-              <p
-                className="text-xs md:text-sm lg:text-base text-center md:text-left scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80"
-                style={{ maxHeight: "45vh", overflowY: "auto" }}
-              >
+              <p className="max-h-[45vh] text-xs md:text-sm lg:text-base text-center md:text-left scrollbar-thin overflow-y-auto scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
                 {project.summary}
               </p>
             </div>
