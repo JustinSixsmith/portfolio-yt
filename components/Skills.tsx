@@ -8,7 +8,7 @@ type Props = {
 };
 
 function Skills({ skills }: Props) {
-  skills.sort((a, b) => a.progress - b.progress).reverse();
+  skills.sort((a, b) => a.title.localeCompare(b.title));
 
   return (
     <motion.div
@@ -26,14 +26,12 @@ function Skills({ skills }: Props) {
       </h3> */}
 
       <div className="grid grid-cols-5 gap-5">
-        {skills.slice(0, Math.ceil(skills.length / 2)).map((skill) => (
+        {skills.slice(0, 20).map((skill) => (
           <Skill key={skill._id} skill={skill} />
         ))}
-        {skills
-          ?.slice(Math.ceil(skills.length / 2), skills.length)
-          .map((skill) => (
-            <Skill key={skill._id} skill={skill} directionLeft />
-          ))}
+        {skills?.slice(20).map((skill) => (
+          <Skill key={skill._id} skill={skill} directionLeft />
+        ))}
       </div>
     </motion.div>
   );

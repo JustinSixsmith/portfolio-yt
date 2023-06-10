@@ -1,7 +1,7 @@
-"use client";
-import { urlFor } from "@/sanity.config";
-import { Skill } from "@/types/Skill";
-import { motion } from "framer-motion";
+'use client';
+import { urlFor } from '@/sanity.config';
+import { Skill } from '@/types/Skill';
+import { motion } from 'framer-motion';
 
 type Props = {
   skill: Skill;
@@ -26,13 +26,17 @@ function Skill({ skill, directionLeft }: Props) {
         src={urlFor(skill?.image).url()}
         className="rounded-full border border-gray-500 object-cover w-10 h-10 md:w-11 md:h-11 xl:w-12 xl:h-12 filter group-hover:grayscale transition duration-300 ease-in-out"
       />
-      <div className="absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white w-8 h-8 md:w-10 md:h-10 xl:w-12 xl:h-12 rounded-full z-0">
+      <a
+        className="absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white w-8 h-8 md:w-10 md:h-10 xl:w-12 xl:h-12 rounded-full z-0"
+        target="_blank"
+        href={skill.linkToWebsite}
+      >
         <div className="flex items-center justify-center h-full">
-          <p className="text-[0.6rem] font-bold text-black opacity-100 p-2">
+          <p className="text-[0.6rem] font-bold text-black opacity-100 p-4 max-w-none">
             {skill?.title}
           </p>
         </div>
-      </div>
+      </a>
     </div>
   );
 }

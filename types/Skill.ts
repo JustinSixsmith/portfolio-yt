@@ -1,10 +1,10 @@
-import { Image } from "./Image";
+import { Image } from './Image';
 
 export type Skill = {
   _id: string;
   _createdAt: Date;
-  _type: "skill";
+  _type: 'skill';
   title: string;
   image: Image;
-  progress: number;
+  linkToWebsite: string;
 };
