@@ -1,16 +1,14 @@
-"use client";
-import { motion } from "framer-motion";
-import Skill from "./Skill";
-import { Skill as SkillType } from "@/types/Skill";
+'use client';
+import { motion } from 'framer-motion';
+import Skill from './Skill';
+import { Skill as SkillType } from '@/types/Skill';
 
 type Props = {
   skills: SkillType[];
 };
 
 function Skills({ skills }: Props) {
-  const sortedSkills = skills
-    ?.sort((a, b) => a.progress - b.progress)
-    .reverse();
+  skills.sort((a, b) => a.progress - b.progress).reverse();
 
   return (
     <motion.div
@@ -27,13 +25,15 @@ function Skills({ skills }: Props) {
         Hover over a skill for current proficiency
       </h3> */}
 
-      <div className="grid grid-cols-4 gap-5">
-        {sortedSkills?.slice(0, skills.length / 2).map((skill) => (
+      <div className="grid grid-cols-5 gap-5">
+        {skills.slice(0, Math.ceil(skills.length / 2)).map((skill) => (
           <Skill key={skill._id} skill={skill} />
         ))}
-        {skills?.slice(skills.length / 2, skills.length).map((skill) => (
-          <Skill key={skill._id} skill={skill} directionLeft />
-        ))}
+        {skills
+          ?.slice(Math.ceil(skills.length / 2), skills.length)
+          .map((skill) => (
+            <Skill key={skill._id} skill={skill} directionLeft />
+          ))}
       </div>
     </motion.div>
   );

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { urlFor } from "@/sanity.config";
-import { Project } from "@/types/Project";
-import { motion } from "framer-motion";
-import { SocialIcon } from "react-social-icons";
+import { urlFor } from '@/sanity.config';
+import { Project } from '@/types/Project';
+import { motion } from 'framer-motion';
+import { SocialIcon } from 'react-social-icons';
 
 type Props = {
   projects: Project[];
@@ -35,6 +35,7 @@ function Projects({ projects }: Props) {
               href={project?.linkToBuild}
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:scale-[1.03] transition-all duration-150 ease-in"
             >
               <motion.img
                 initial={{
@@ -59,15 +60,15 @@ function Projects({ projects }: Props) {
               <h4 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center whitespace-nowrap">
                 <span className="underline decoration-[#F7AB0A]/50 hidden lg:inline">
                   Project {i + 1} of {sortedProjects.length}:
-                </span>{" "}
-                {project.title}{" "}
+                </span>{' '}
+                {project.title}{' '}
                 <SocialIcon
                   url={project?.linkToSource}
                   target="_blank"
                   rel="noopener noreferrer"
                   fgColor="gray"
                   bgColor="transparent"
-                  className="inline-block opacity-80 hover:opacity-100"
+                  className="inline-block opacity-80 hover:opacity-100 -mt-1"
                   style={{ height: 50, width: 50 }}
                 />
               </h4>
