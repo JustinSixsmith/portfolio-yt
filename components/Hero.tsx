@@ -1,9 +1,9 @@
-"use client";
-import scrollToSection from "@/functions/scrollToSection";
-import { urlFor } from "@/sanity.config";
-import { PageInfo } from "@/types/PageInfo";
-import { Cursor, useTypewriter } from "react-simple-typewriter";
-import BackgroundCircles from "./BackgroundCircles";
+'use client';
+import scrollToSection from '@/functions/scrollToSection';
+import { urlFor } from '@/sanity.config';
+import { PageInfo } from '@/types/PageInfo';
+import { Cursor, useTypewriter } from 'react-simple-typewriter';
+import BackgroundCircles from './BackgroundCircles';
 
 type Props = {
   pageInfo: PageInfo;
@@ -13,10 +13,10 @@ function Hero({ pageInfo }: Props) {
   const [text] = useTypewriter({
     words: [
       `Hi, I'm ${pageInfo?.name}!`,
-      "<CodingAficionado />",
-      "with a penchant for semicolons;",
-      "Debugger-by-day.tsx",
-      "Java(script) brewer by night.",
+      '<CodingAficionado />',
+      'with a penchant for semicolons;',
+      'Debugger-by-day.tsx',
+      'Java(script) brewer by night.',
     ],
     loop: true,
     delaySpeed: 2000,
@@ -43,25 +43,25 @@ function Hero({ pageInfo }: Props) {
         <div className="pt-5">
           <button
             className="heroButton"
-            onClick={() => scrollToSection("about")}
+            onClick={() => scrollToSection('about')}
           >
             About
           </button>
           <button
             className="heroButton"
-            onClick={() => scrollToSection("experience")}
+            onClick={() => scrollToSection('experience')}
           >
             Experience
           </button>
           <button
             className="heroButton"
-            onClick={() => scrollToSection("skills")}
+            onClick={() => scrollToSection('skills')}
           >
             Skills
           </button>
           <button
             className="heroButton"
-            onClick={() => scrollToSection("projects")}
+            onClick={() => scrollToSection('projects')}
           >
             Projects
           </button>

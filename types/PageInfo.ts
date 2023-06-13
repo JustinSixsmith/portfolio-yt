@@ -1,9 +1,9 @@
-import { Image } from "./Image";
+import { Image } from './Image';
 
 export type PageInfo = {
   _id: string;
   _createdAt: Date;
-  _type: "pageInfo";
+  _type: 'pageInfo';
   name: string;
   role: string;
   heroImage: Image;

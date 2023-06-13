@@ -1,8 +1,7 @@
-"use client";
-import { urlFor } from "@/sanity.config";
-import { PageInfo } from "@/types/PageInfo";
-import exp from "constants";
-import { motion } from "framer-motion";
+'use client';
+import { urlFor } from '@/sanity.config';
+import { PageInfo } from '@/types/PageInfo';
+import { motion } from 'framer-motion';
 
 type Props = {
   pageInfo: PageInfo;
@@ -39,7 +38,7 @@ function About({ pageInfo }: Props) {
 
       <div className="max-h-[45vh] space-y-5 px-0 md:px-10 scrollbar-thin overflow-y-auto scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
         <h4 className="text-xl md:text-2xl lg:text-4xl font-semibold">
-          A <span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
+          A <span className="underline decoration-[#F7AB0A]/50">little</span>{' '}
           background...
         </h4>
         <p className="text-xs md:base lg:text-lg">
