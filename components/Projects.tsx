@@ -3,6 +3,7 @@
 import { urlFor } from '@/sanity.config';
 import { Project } from '@/types/Project';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { SocialIcon } from 'react-social-icons';
 
 type Props = {
@@ -75,10 +76,13 @@ function Projects({ projects }: Props) {
 
               <div className="flex items-center justify-center space-x-2">
                 {project.technologies?.map((technology) => (
-                  <img
+                  <Image
                     key={technology._id}
+                    height={24}
+                    width={24}
                     className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full"
                     src={urlFor(technology.image).url()}
+                    alt={`${technology.title} logo`}
                   />
                 ))}
               </div>

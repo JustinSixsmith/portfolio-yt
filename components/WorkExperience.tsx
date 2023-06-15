@@ -1,7 +1,7 @@
-"use client";
-import { Experience } from "@/types/Experience";
-import { motion } from "framer-motion";
-import ExperienceCard from "./ExperienceCard";
+'use client';
+import { Experience } from '@/types/Experience';
+import { motion } from 'framer-motion';
+import ExperienceCard from './ExperienceCard';
 
 type Props = {
   experience: Experience[];
@@ -9,11 +9,11 @@ type Props = {
 
 function WorkExperience({ experience }: Props) {
   const sortOrder = [
-    "Prime Communications",
-    "Codeup",
-    "Code with Mosh",
-    "Wes Bos",
-    "Udemy",
+    'Prime Communications',
+    'Codeup',
+    'Code with Mosh',
+    'Wes Bos',
+    'Udemy',
   ];
 
   const sortedExperience = experience?.sort((a, b) => {

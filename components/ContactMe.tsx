@@ -1,6 +1,6 @@
-"use client";
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid";
-import { useForm } from "react-hook-form";
+'use client';
+import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid';
+import { useForm } from 'react-hook-form';
 
 type FormValues = {
   name: string;
@@ -53,13 +53,13 @@ function ContactMe({}: Props) {
         >
           <div className="flex space-x-1">
             <input
-              {...register("name")}
+              {...register('name')}
               placeholder="Name"
               className="contactInput"
               type="text"
             />
             <input
-              {...register("email")}
+              {...register('email')}
               placeholder="Email"
               className="contactInput"
               type="email"
@@ -67,14 +67,14 @@ function ContactMe({}: Props) {
           </div>
 
           <input
-            {...register("subject")}
+            {...register('subject')}
             placeholder="Subject"
             className="contactInput"
             type="text"
           />
 
           <textarea
-            {...register("message")}
+            {...register('message')}
             placeholder="Message"
             className="contactInput"
           />

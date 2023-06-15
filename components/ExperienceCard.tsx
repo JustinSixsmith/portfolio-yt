@@ -1,7 +1,8 @@
-"use client";
-import { urlFor } from "@/sanity.config";
-import { Experience } from "@/types/Experience";
-import { motion } from "framer-motion";
+'use client';
+import { urlFor } from '@/sanity.config';
+import { Experience } from '@/types/Experience';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 type Props = {
   experience: Experience;
@@ -29,25 +30,28 @@ function ExperienceCard({ experience }: Props) {
         <p className="uppercase font-bold mt-1">{experience?.company}</p>
         <div className="flex space-x-1 lg:space-x-2 my-2">
           {experience?.technologies?.map((technology) => (
-            <img
+            <Image
               key={technology._id}
+              height={20}
+              width={20}
               className="h-5 w-5 md:h-6 md:w-6 xl:h-7 xl:w-7 rounded-full"
               src={urlFor(technology.image).url()}
+              alt={`${technology.title} logo`}
             />
           ))}
         </div>
 
         <p className="uppercase py-5 text-gray-300 text-xs">
-          {new Date(experience?.dateStarted).toLocaleDateString("default", {
-            year: "numeric",
-            month: "short",
-          })}{" "}
-          -{" "}
+          {new Date(experience?.dateStarted).toLocaleDateString('default', {
+            year: 'numeric',
+            month: 'short',
+          })}{' '}
+          -{' '}
           {experience.isCurrentlyWorkingHere
-            ? "Present"
-            : new Date(experience?.dateEnded).toLocaleDateString("default", {
-                year: "numeric",
-                month: "short",
+            ? 'Present'
+            : new Date(experience?.dateEnded).toLocaleDateString('default', {
+                year: 'numeric',
+                month: 'short',
               })}
         </p>
 

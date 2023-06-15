@@ -4,6 +4,7 @@ import { urlFor } from '@/sanity.config';
 import { PageInfo } from '@/types/PageInfo';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import BackgroundCircles from './BackgroundCircles';
+import Image from 'next/image';
 
 type Props = {
   pageInfo: PageInfo;
@@ -25,9 +26,10 @@ function Hero({ pageInfo }: Props) {
   return (
     <div className="h-screen flex flex-col space-y-10 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
-      <img
+      <Image
         src={urlFor(pageInfo?.heroImage).url()}
         width={32}
+        height={32}
         alt={pageInfo?.name}
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
       />
