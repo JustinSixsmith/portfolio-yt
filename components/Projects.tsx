@@ -11,9 +11,16 @@ type Props = {
 };
 
 function Projects({ projects }: Props) {
-  const sortedProjects = projects?.sort((a, b) =>
-    a.title.localeCompare(b.title)
-  );
+  const sortOrder = [
+    'Board Game Discovery',
+    'Pet Adoptions',
+    'Chirp',
+    'Moshify Cloud Hosting',
+  ];
+
+  const sortedProjects = projects?.sort((a, b) => {
+    return sortOrder.indexOf(a.title) - sortOrder.indexOf(b.title);
+  });
 
   return (
     <motion.div
