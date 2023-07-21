@@ -28,8 +28,8 @@ function Hero({ pageInfo }: Props) {
       <BackgroundCircles />
       <Image
         src={urlFor(pageInfo?.heroImage).url()}
-        width={32}
-        height={32}
+        width={128}
+        height={128}
         alt={pageInfo?.name}
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
       />
