@@ -38,8 +38,8 @@ function About({ pageInfo }: Props) {
 
       <div className="max-h-[45vh] space-y-5 px-0 md:px-10 scrollbar-thin overflow-y-auto scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
         <h4 className="text-xl md:text-2xl lg:text-4xl font-semibold">
-          A <span className="underline decoration-[#F7AB0A]/50">little</span>{' '}
-          background...
+          A <span className="underline decoration-[#F7AB0A]/50">brief</span>{' '}
+          introduction...
         </h4>
         <p className="text-xs md:base lg:text-lg">
           {pageInfo?.backgroundInformation}
