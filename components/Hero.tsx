@@ -32,10 +32,10 @@ function Hero({ pageInfo }: Props) {
         height={256}
         style={{ marginTop: '-16px' }}
         alt={pageInfo?.name}
-        className="relative rounded-full h-58 w-58 mx-auto object-cover"
+        className="relative top-10 rounded-full h-40 w-40 mx-auto object-cover"
       />
       <div className="z-20">
-        <h2 className="text-xs md:text-base lg:text-lg uppercase text-gray-500 pb-2 tracking-[6px] md:tracking-[12px] lg:tracking-[18px]">
+        <h2 className="mt-6 ml-4 text-xs md:text-base lg:text-lg uppercase text-gray-500 pb-2 tracking-[6px] md:tracking-[12px] lg:tracking-[18px]">
           {pageInfo?.role}
         </h2>
         <h1 className="text-lg md:text-3xl lg:text-5xl font-semibold px-5">
