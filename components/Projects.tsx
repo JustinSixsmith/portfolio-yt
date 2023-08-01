@@ -14,7 +14,7 @@ function Projects({ projects }: Props) {
   const sortOrder = [
     'Board Game Discovery',
     'Pet Adoptions',
-    'Chirp',
+    'Sonic Workshop',
     'Moshify Cloud Hosting',
   ];
 
@@ -65,11 +65,15 @@ function Projects({ projects }: Props) {
             </a>
 
             <div className="space-y-2 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center whitespace-nowrap">
-                <span className="underline decoration-[#F7AB0A]/50 hidden lg:inline">
-                  Project {i + 1} of {sortedProjects.length}:
-                </span>{' '}
-                {project.title}{' '}
+              <h4 className="text-stone-200 text-lg md:text-xl lg:text-2xl font-semibold text-center whitespace-nowrap">
+                <span className="hidden lg:inline">
+                  Project {i + 1} of {sortedProjects.length}:{' '}
+                </span>
+                <a href={project.linkToBuild}>
+                  <span className="text-white text-lg md:text-2xl lg:text-3xl underline decoration-[#F7AB0A]/50  hover:text-stone-200">
+                    {project.title}
+                  </span>
+                </a>{' '}
                 <SocialIcon
                   url={project?.linkToSource}
                   target="_blank"
